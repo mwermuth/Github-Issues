@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+/*
+ *= require_self
+ */
+
+// @import "compass";
+// @import "blueprint";
+
+@import "_jqueryui";
+
+body {
+  background: #333;
+  color: #ccc;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: small;
+}
+
+h1 {
+  color: #fff;
+}
+
+#parent {
+  margin: 30px auto;
+  width: 540px;
+  font-size: 105%;
+}
+
