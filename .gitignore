@@ -2,6 +2,7 @@
 log/*.log
 pkg/
 .DS_Store
+.sass-cache
 test/dummy/db/*.sqlite3
 test/dummy/log/*.log
 test/dummy/tmp/
