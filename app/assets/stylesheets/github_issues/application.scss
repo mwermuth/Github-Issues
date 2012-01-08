@@ -1,6 +1,14 @@
-/*
- * This is a manifest file that'll automatically include all the stylesheets available in this directory
- * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
- * the top of the compiled file, but it's generally better to create a new file per style scope.
- *= require_self
-*/
+a#new_github_issue_link {
+  display: block;
+  position: fixed;
+  top: 30%;
+  left: 0;
+  height: 141px;
+  width: 49px;
+  text-indent: - 10000px;
+  background: url("btn_new_issue.png") no-repeat;
+}
+
+a.dark_github_issue_link {
+  background-position: 0 -141px !important;
+}
