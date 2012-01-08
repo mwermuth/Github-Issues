@@ -28,6 +28,10 @@ group :assets do
   gem 'coffee-rails', "~> 3.1.1"
 end
 
+group :test, :development do
+  gem 'rspec-rails'
+end
+
 # Declare your gem's dependencies in github_issues.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
 # development dependencies will be added by default to the :development group.
