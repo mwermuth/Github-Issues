@@ -10,18 +10,21 @@ jQuery ->
 
   if $("#new_github_issue_link").length > 0
 
-    $("body").append("<div id='new_github_issue_dialog' title='New Issue'></div>")
-
     $("#new_github_issue_dialog").dialog
       modal: true
       autoOpen: false
-      width: 450
-      height: 350
+      width: 500
+      height: 450
       buttons: 
         "okay": ->
           console.log 'okay, clicked'
-          $(@).dialog 'close'
+          params = $("#new_github_issue_form").serialize()
+          url = "/github_issues/issues"
+          $.post url, params, 'script'
         "cancel": ->
+          $('#github_issues_issue_title').val('')
+          $('#github_issues_issue_message').val('')
+          $('#new_github_issue_form > #errorExplanation').remove()
           $(@).dialog 'close'
 
     $("#new_github_issue_link").live 'click', (e) ->

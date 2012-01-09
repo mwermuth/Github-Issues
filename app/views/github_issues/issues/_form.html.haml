@@ -1,0 +1,19 @@
+= form_for @issue, :url => "#", 
+  :html => {:id => "new_github_issue_form"} do |f|
+  - if @issue.errors.any?
+    #errorExplanation
+      %h2
+        = pluralize(@issue.errors.count, "error")
+        prohibited this user from being saved:
+      %ul
+        - @issue.errors.full_messages.each do |msg|
+          %li= msg
+  %p
+    %label Title
+    %br
+    = f.text_field :title, :class => "github_issue_field"
+  %p
+    %label Message
+    %br
+    = f.text_area :message, :class => "github_issue_field"
+

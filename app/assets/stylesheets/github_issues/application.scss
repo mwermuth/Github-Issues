@@ -12,3 +12,16 @@ a#new_github_issue_link {
 a.dark_github_issue_link {
   background-position: 0 -141px !important;
 }
+
+#new_github_issue_form {
+  .github_issue_field {
+    padding: 4px;
+    border: 1px solid #ccc;
+    width: 98%;
+  }
+
+  textarea {
+    font-size: 12px !important;
+    height: 223px;
+  }
+}
