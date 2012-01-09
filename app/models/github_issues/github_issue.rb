@@ -1,4 +1,4 @@
-class Issue
+class GithubIssue
   include ActiveModel::Validations
   
   attr_accessor :title, :message
