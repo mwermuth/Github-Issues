@@ -5,6 +5,7 @@ module GithubIssues
         format.js do
           @issue = Issue.new(params[:github_issues_issue])
           if @issue.valid?
+            @issue.save
             render "create_success"
           else
             render "create_error"
