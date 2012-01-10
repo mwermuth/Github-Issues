@@ -20,6 +20,12 @@ jQuery ->
 
   if $("#new_github_issue_link").length > 0
 
+    $('#github_issues_issue_title').live 'keypress', (e) ->
+      code = if e.keyCode then e.keyCode else e.which
+      if code == 13
+        e.preventDefault()
+      
+
     $("#new_github_issue_dialog").dialog
       modal: true
       autoOpen: false
