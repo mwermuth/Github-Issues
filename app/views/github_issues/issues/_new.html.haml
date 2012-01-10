@@ -1,7 +1,0 @@
-#new_github_issue_dialog{:title => "New Issue", :style => "display:none;"}
-  #new_github_issue_form_container
-    = render "github_issues/issues/form"
-#github_issue_submitted_successfully_dialog{:title => "Issue Submitted", :style => "display:none;"}
-  %p
-    Your issue has succesfully been submitted.
-= link_to "new issue", "#", :id => "new_github_issue_link", :class => "dark_github_issue_link"

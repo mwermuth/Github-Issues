@@ -1,0 +1,27 @@
+<%= form_for @issue, :url => "#", :html => {:id => "new_github_issue_form"} do |f| %>
+  <% if @issue.errors.any? %>
+    <div class="errorExplanation">
+      <h2>
+        <%= pluralize(@issue.errors.count, "error") %>
+        prohibited this issue from being saved:
+      </h2>
+      <ul>
+        <% @issue.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <label>Title</label>
+    <div>
+      <%= f.text_field :title, :class => "github_issue_field" %>
+    </div>
+  </p>
+  <p>
+    <label>Message body</label>
+    <div>
+      <%= f.text_area :body, :class => "github_issue_field" %>
+    </div>
+  </p>
+<% end %>
