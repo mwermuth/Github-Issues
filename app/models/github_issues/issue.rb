@@ -1,6 +1,9 @@
 module GithubIssues
   class Issue
     include ActiveModel::Validations
+    extend ActiveModel::Callbacks
+
+    define_model_callbacks :save
     
     attr_accessor :title, :body
 
@@ -23,9 +26,11 @@ module GithubIssues
     end
 
     def save
-      params = {:title => title, :body => body}
-      api = GitHubV3API.new(@config["github_token"])
-      api.issues.create(@config["user"], @config["repo"], params)
+      run_callbacks :save do
+        params = {:title => title, :body => body}
+        api = GitHubV3API.new(@config["github_token"])
+        api.issues.create(@config["user"], @config["repo"], params)
+      end
       true
     end
   end
