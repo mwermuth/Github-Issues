@@ -9,7 +9,7 @@ window.GithubIssues =
   clearForm: ->
     $('#github_issues_issue_title').val('')
     $('#github_issues_issue_message').val('')
-    $('#new_github_issue_form > #errorExplanation').remove()
+    $('#new_github_issue_form > .errorExplanation').remove()
 
   submitForm: ->
     params = $("#new_github_issue_form").serialize()
