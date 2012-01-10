@@ -8,7 +8,7 @@ window.GithubIssues =
   
   clearForm: ->
     $('#github_issues_issue_title').val('')
-    $('#github_issues_issue_message').val('')
+    $('#github_issues_issue_body').val('')
     $('#new_github_issue_form > .errorExplanation').remove()
 
   submitForm: ->
