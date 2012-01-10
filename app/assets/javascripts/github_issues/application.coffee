@@ -4,7 +4,17 @@ unless jQuery?
 unless jQuery.ui?
   throw "Github Issues Error: jQuery UI needs to be loaded for Github Issues to work."
 
-window.GitHubIssue
+window.GithubIssues =
+  
+  clearForm: ->
+    $('#github_issues_issue_title').val('')
+    $('#github_issues_issue_message').val('')
+    $('#new_github_issue_form > #errorExplanation').remove()
+
+  submitForm: ->
+    params = $("#new_github_issue_form").serialize()
+    url = "/github_issues/issues"
+    $.post url, params, 'script'
 
 jQuery ->
 
@@ -14,17 +24,19 @@ jQuery ->
       modal: true
       autoOpen: false
       width: 500
-      # height: 450
       buttons: 
         "okay": ->
-          console.log 'okay, clicked'
-          params = $("#new_github_issue_form").serialize()
-          url = "/github_issues/issues"
-          $.post url, params, 'script'
+          GithubIssues.submitForm()
         "cancel": ->
-          $('#github_issues_issue_title').val('')
-          $('#github_issues_issue_message').val('')
-          $('#new_github_issue_form > #errorExplanation').remove()
+          GithubIssues.clearForm()
+          $(@).dialog 'close'
+
+    $("#github_issue_submitted_successfully_dialog").dialog
+      modal: true
+      autoOpen: false
+      width: 300
+      buttons: 
+        "okay": ->
           $(@).dialog 'close'
 
     $("#new_github_issue_link").live 'click', (e) ->
