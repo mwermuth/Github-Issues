@@ -14,7 +14,7 @@ jQuery ->
       modal: true
       autoOpen: false
       width: 500
-      height: 450
+      # height: 450
       buttons: 
         "okay": ->
           console.log 'okay, clicked'
