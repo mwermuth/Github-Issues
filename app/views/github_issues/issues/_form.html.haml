@@ -4,7 +4,7 @@
     #errorExplanation
       %h2
         = pluralize(@issue.errors.count, "error")
-        prohibited this user from being saved:
+        prohibited this issue from being saved:
       %ul
         - @issue.errors.full_messages.each do |msg|
           %li= msg
@@ -13,7 +13,7 @@
     %br
     = f.text_field :title, :class => "github_issue_field"
   %p
-    %label Message
+    %label Message body
     %br
-    = f.text_area :message, :class => "github_issue_field"
+    = f.text_area :body, :class => "github_issue_field"
 
