@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = GithubIssues::VERSION
   s.authors     = ["Elliot Larson, Steven Chanin"]
   s.email       = ["elliot@onehouse.net, schanin@devleverage.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/onehouse/Github-Issues"
   s.summary     = "Github Issues integration for Rails"
   s.description = "This gem adds a light weight jQuery UI interface to a Rails site which allows the submission of issues to the Github issue tracker via the Github API."
 
