@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <%= csrf_meta_tag %>
+    <title>Github Issues</title>
+    <%= stylesheet_link_tag 'application' %>
+    <%= stylesheet_link_tag 'github_issues/application' %>
+    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "github_issues/application" %>
+  <body>
+    <div id="parent">
+      <%= yield %>
+    </div>
+    <%= github_issue_dialog %>
+  </body>
+</html>
