@@ -1,3 +1,5 @@
+## GitHub Issues
+
 GitHub Issues is a lightweight jQuery UI based interface, which allows you to easily add issues to the GitHub issue tracker via the GitHub API.
 
 ***Disclaimer***: This gem uses GitHub's V3 API, which is still under development, so things may need to change as they are still changing the API's interface.
