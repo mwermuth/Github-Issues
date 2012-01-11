@@ -1,6 +1,6 @@
 module GithubIssues
   module ApplicationHelper
-    def github_issue_dialog
+    def github_issues
       @issue = Issue.new
       render "github_issues/issues/new"
     end
