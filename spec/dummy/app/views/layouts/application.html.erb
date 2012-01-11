@@ -12,6 +12,6 @@
     <div id="parent">
       <%= yield %>
     </div>
-    <%= github_issue_dialog %>
+    <%= github_issues :prepend_body => "some message text" %>
   </body>
 </html>

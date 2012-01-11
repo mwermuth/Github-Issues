@@ -1,4 +1,8 @@
 <%= form_for @issue, :url => "#", :html => {:id => "new_github_issue_form"} do |f| %>
+  <%= f.hidden_field :prepend_title %>
+  <%= f.hidden_field :append_title %>
+  <%= f.hidden_field :prepend_body %>
+  <%= f.hidden_field :append_body %>
   <% if @issue.errors.any? %>
     <div class="errorExplanation">
       <h2>
