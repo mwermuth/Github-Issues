@@ -16,7 +16,7 @@ Rails 3.1, jQuery UI, github-v3-api gem, GitHub OAuth2 token
 
 The GitHub API interaction for this gem is provided by the github-v3-api gem <https://github.com/jwilger/github-v3-api>.  The API requires an OAuth2 token, which is a bit of a pain to generate.  Luckily the github-v3-api gem makes this process fairly painless.  Follow github-v3-api gem's README for directions on how to generate the token.
 
-***Note***: Part of getting your token involves registering your application with GitHub.  The GitHub account that you register your application under, and then generate the OAuth2 token for, will be the account that all issues are added to the issue tracker under via the GitHub Issues gem.  (We'll show you how to add a bit more application specific information to the issue a bit later.) 
+***Note***: Part of getting your token involves registering your application with GitHub.  The GitHub account that you register your application under, and then generate the OAuth2 token for, will be the account that all issues are added to the issue tracker under via the GitHub Issues gem.  (We'll show you how to add application specific information to the issue, like the current application user's name, a bit later.) 
 
 ## Adding To A Rails App
 
@@ -41,7 +41,7 @@ Once you've acquired the OAuth2 token for the GitHub API, you can add a github_i
       user: 
       repo: 
 
-This should be self explanatory, but the user and the repo are the user and repo of the application you are submitting issues for (presumably the application you are adding this github_issues.yml file to.)
+The user and the repo are the user and repo of the application you are submitting issues for (presumably the application you are adding this github_issues.yml file to.)
 
 #### Add the gems to your Gemfile:
 
@@ -80,6 +80,8 @@ That should be it.  If everything is in place, you should see a "new issue" link
 #### It's not working:
 
 Do you have the right OAuth2 token, or are you trying to just use your GitHub API key in the github_token section of the yml config file?  This seems like an easy mistake to make.  If you think this might be your issue, check out the README for the <https://github.com/jwilger/github-v3-api> gem.  It'll walk you through the process of getting the right token.
+
+Do you have a JavaScript error on your page?  This system relies on JavaScript, so a JavaScript error on the page could interfere with the interface provided by this gem.
 
 # Adding a bit of application specific info to the issue
 
