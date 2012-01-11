@@ -44,4 +44,39 @@ describe GithubIssues::Issue do
       @issue.save
     end
   end
+
+  describe "prepends and appends" do
+    before :each do
+      obj_1 = Object.new
+      obj_2 = Object.new
+      GitHubV3API.should_receive(:new).and_return(obj_1)
+      obj_1.should_receive(:issues).and_return(obj_2)
+      obj_2.should_receive(:create).and_return(true)
+      @issue = GithubIssues::Issue.new({:title => "some text", :body => "some text"})
+    end
+
+    it "prepends title" do
+      @issue.prepend_title = "hello "
+      @issue.save
+      @issue.title.should =~ /hello some text/
+    end
+
+    it "appends title" do
+      @issue.append_title = " hello"
+      @issue.save
+      @issue.title.should =~ /some text hello/
+    end
+
+    it "prepends body" do
+      @issue.prepend_body = "hello "
+      @issue.save
+      @issue.body.should =~ /hello some text/
+    end
+
+    it "appends body" do
+      @issue.append_body = " hello"
+      @issue.save
+      @issue.body.should =~ /some text hello/
+    end
+  end
 end
