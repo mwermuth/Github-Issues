@@ -1,18 +1,24 @@
-## GitHub Issues
+# GitHub Issues
 
-GitHub Issues is a lightweight jQuery UI based interface, which allows you to easily add issues to the GitHub issue tracker via the GitHub API.
+----
 
-***Disclaimer***: This gem uses GitHub's V3 API, which is still under development, so things may need to change as they are still changing the API's interface.
+GitHub Issues is a lightweight jQuery UI based interface you can add to your Rails site, which allows you to easily add issues to the GitHub issue tracker via the GitHub API.
 
-This gem also requires Rails 3.1.
+***Disclaimer***: This gem uses GitHub's V3 API, which is still under development, so things may need to change as GitHub is still changing the API's interface.
 
-### GitHub API V3
+##### Requirements 
+
+Rails 3.1, jQuery UI, github-v3-api gem, GitHub OAuth2 token
+
+# Getting Up and Running
+
+## GitHub API V3
 
 The GitHub API interaction for this gem is provided by the github-v3-api gem <https://github.com/jwilger/github-v3-api>.  The API requires an OAuth2 token, which is a bit of a pain to generate.  Luckily the github-v3-api gem makes this process fairly painless.  Follow github-v3-api gem's README for directions on how to generate the token.
 
 ***Note***: Part of getting your token involves registering your application with GitHub.  The GitHub account that you register your application under, and then generate the OAuth2 token for, will be the account that all issues are added to the issue tracker under via the GitHub Issues gem.  (We'll show you how to add a bit more application specific information to the issue a bit later.) 
 
-### Adding To A Rails App
+## Adding To A Rails App
 
 #### Add config file:
 
@@ -75,9 +81,9 @@ That should be it.  If everything is in place, you should see a "new issue" link
 
 Do you have the right OAuth2 token, or are you trying to just use your GitHub API key in the github_token section of the yml config file?  This seems like an easy mistake to make.  If you think this might be your issue, check out the README for the <https://github.com/jwilger/github-v3-api> gem.  It'll walk you through the process of getting the right token.
 
-### Adding a bit of application specific info to the issue
+# Adding a bit of application specific info to the issue
 
-The GitHub issue tracker has two fields, title and body.  You can use the github_issues helper to add values to prepend or append additional data to either of these fields:
+The GitHub issue tracker has two fields, title and body.  You can use the github_issues helper to add additional data to either of these fields:
 
 /app/views/layouts/application.html.haml
 
