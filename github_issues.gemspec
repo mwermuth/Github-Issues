@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = "Github Issues integration for Rails"
   s.description = "This gem adds a light weight jQuery UI interface to a Rails site which allows the submission of issues to the Github issue tracker via the Github API."
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["spec/**/*"]
 
   s.add_dependency "rails", "~> 3.1.3"
