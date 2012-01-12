@@ -19,6 +19,6 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", ">= 3.1.3"
   s.add_dependency "github-v3-api"
   s.add_dependency 'sass-rails', ">= 3.1.4"
-  s.add_dependency 'coffee-rails', ">= 3.1.1"
+  s.add_dependency 'coffee-rails', ">= 3.1.0"
   s.add_development_dependency "sqlite3"
 end
