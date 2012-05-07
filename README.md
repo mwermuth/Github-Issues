@@ -49,6 +49,12 @@ Gemfile
 
     gem 'github-v3-api'
     gem 'github_issues', :git => "git@github.com:onehouse/Github-Issues.git"
+    
+#### Add the GithubIssues routes to your routes file:
+
+/config/routes.rb
+
+    mount GithubIssues::Engine => "/github_issues", :as => "github_issues"
 
 #### Add the CSS and JS to your asset pipeline:
 
