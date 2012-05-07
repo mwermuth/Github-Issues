@@ -16,6 +16,17 @@ window.GithubIssues =
     url = "/github_issues/issues"
     $.post url, params, 'script'
 
+  showDialogIndMsg: (dialog, msg="submitting") ->
+    dialog.parent().find(".ui-dialog-buttonset").hide()
+    if dialog.parent().find(".dialog_ind_msg").length > 0
+      dialog.parent().find(".dialog_ind_msg").html(msg).show()
+    else 
+      dialog.parent().append($("<div>" + msg + "</div>").addClass("github_issues_dialog_ind_msg"))
+  
+  hideDialogIndMsg: (dialog) ->
+    dialog.parent().find(".ui-dialog-buttonset").show()
+    dialog.parent().find(".github_issues_dialog_ind_msg").hide()
+
 jQuery ->
 
   if $("#new_github_issue_link").length > 0
@@ -24,7 +35,6 @@ jQuery ->
       code = if e.keyCode then e.keyCode else e.which
       if code == 13
         e.preventDefault()
-      
 
     $("#new_github_issue_dialog").dialog
       modal: true
@@ -32,7 +42,10 @@ jQuery ->
       width: 500
       buttons: 
         "okay": ->
-          GithubIssues.submitForm()
+          GithubIssues.showDialogIndMsg($(@))
+          setTimeout ->
+            GithubIssues.submitForm()
+          , 500
         "cancel": ->
           GithubIssues.clearForm()
           $(@).dialog 'close'
