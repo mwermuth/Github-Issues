@@ -1,2 +1,2 @@
-$("#new_github_issue_form_container").html("<%= escape_javascript(render "form") %>");
+$("#new_github_issue_form_container").html("<%= escape_javascript(render('form').gsub(/>\&#x000A;/, '>').gsub('<haml:newline/>','').html_safe) %>");
 GithubIssues.hideDialogIndMsg($("#new_github_issue_dialog"));

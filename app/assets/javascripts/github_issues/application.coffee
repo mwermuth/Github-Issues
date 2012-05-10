@@ -14,7 +14,7 @@ window.GithubIssues =
   submitForm: ->
     params = $("#new_github_issue_form").serialize()
     url = "/github_issues/issues"
-    $.post url, params, 'script'
+    $.post(url, params, 'script')
 
   showDialogIndMsg: (dialog, msg="submitting") ->
     dialog.parent().find(".ui-dialog-buttonset").hide()

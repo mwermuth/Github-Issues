@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 
-gem 'rails', '3.1.3'
+gem 'rails', '3.2.3'
 
 # jquery-rails is used by the dummy application
 # gem "jquery-rails"
