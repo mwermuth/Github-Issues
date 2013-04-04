@@ -31,7 +31,7 @@ jQuery ->
 
   if $("#new_github_issue_link").length > 0
 
-    $('#github_issues_issue_title').live 'keypress', (e) ->
+    $('#github_issues_issue_title').on 'keypress', (e) ->
       code = if e.keyCode then e.keyCode else e.which
       if code == 13
         e.preventDefault()
@@ -58,6 +58,6 @@ jQuery ->
         "okay": ->
           $(@).dialog 'close'
 
-    $("#new_github_issue_link").live 'click', (e) ->
+    $("#new_github_issue_link").on 'click', (e) ->
       e.preventDefault()
       $("#new_github_issue_dialog").dialog 'open'
